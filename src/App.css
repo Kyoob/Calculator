@@ -8,7 +8,7 @@
   background-color: black;
   font-family: monospace;
   color: white;
-  font-size: 20px;
+  font-size: 1.5em;
   border: 5px solid black;
 }
 #pad {
@@ -91,15 +91,13 @@
 .key:hover {
   outline: 1px solid white;
 }
-.key-text {
-  font-size: 20px;
-}
 #display {
   cursor: default;
 }
 #input {
   color: orange;
   float: right;
+  font-size: .8em;
 }
 #output {
   float: right;

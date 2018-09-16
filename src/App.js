@@ -10,6 +10,15 @@ class App extends React.Component {
     };
   }
 
+  outputTooLong() {
+    if (this.state.output.length < 20)
+      return false;
+    this.setState({
+      output: 'DIGIT LIMIT MET'
+    });
+    return true;
+  }
+
   updateScreen(v) {
     switch(v) {
       case('AC'):
@@ -21,7 +30,7 @@ class App extends React.Component {
       case('='):
         break;
       case('.'):
-        !this.state.input.includes(v) && this.setState({
+        !this.state.input.includes(v) && !this.outputTooLong() && this.setState({
           input: this.state.input + v,
           output: this.state.output + v
         });
@@ -39,9 +48,9 @@ class App extends React.Component {
         });
         break;
       default:
-        this.setState({
+        !this.outputTooLong() && this.setState({
           input: this.state.input == '0' ? v : this.state.input + v,
-          output: this.state.output == '0' ? v : this.state.output + v
+          output: ['+', '-', 'X', '/', '0'].some((x) => x === this.state.input.slice(-1)) ? v : this.state.output + v
         });
     }
   }
