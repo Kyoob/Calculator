@@ -4,6 +4,9 @@
   align-items: center;
   height: 100vh;
 }
+#app {
+  background-color: black;
+}
 #pad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -17,7 +20,6 @@
   width: 35vh;
   height: 40vh;
   grid-gap: 1px 1px;
-  background-color: black;
   border: 5px solid black;
 }
 #clear {
