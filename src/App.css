@@ -6,6 +6,10 @@
 }
 #app {
   background-color: black;
+  font-family: monospace;
+  color: white;
+  font-size: 20px;
+  border: 5px solid black;
 }
 #pad {
   display: grid;
@@ -20,7 +24,6 @@
   width: 35vh;
   height: 40vh;
   grid-gap: 1px 1px;
-  border: 5px solid black;
 }
 #clear {
   grid-area: clear;
@@ -89,7 +92,15 @@
   outline: 1px solid white;
 }
 .key-text {
-  font-family: monospace;
   font-size: 20px;
-  color: white;
+}
+#display {
+  cursor: default;
+}
+#input {
+  color: orange;
+  float: right;
+}
+#output {
+  float: right;
 }
