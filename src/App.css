@@ -1,0 +1,93 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "clear clear divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
+  width: 35vh;
+  height: 40vh;
+  grid-gap: 1px 1px;
+  background-color: black;
+  border: 5px solid black;
+}
+#clear {
+  grid-area: clear;
+  background-color: #ac3939;
+}
+#divide {
+  grid-area: divide;
+}
+#multiply {
+  grid-area: multiply;
+}
+#seven {
+  grid-area: seven;
+}
+#eight {
+  grid-area: eight;
+}
+#nine {
+  grid-area: nine;
+}
+#subtract {
+  grid-area: subtract;
+}
+#four {
+  grid-area: four;
+}
+#five {
+  grid-area: five;
+}
+#six {
+  grid-area: six;
+}
+#add {
+  grid-area: add;
+}
+#one {
+  grid-area: one;
+}
+#two {
+  grid-area: two;
+}
+#three {
+  grid-area: three;
+}
+#equals {
+  grid-area: equals;
+  background-color: #004466;
+}
+#zero {
+  grid-area: zero;
+}
+#decimal {
+  grid-area: decimal;
+}
+#add, #subtract, #multiply, #divide {
+  background-color: #666666;
+}
+.key {
+  cursor: pointer;
+  background: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.key:hover {
+  outline: 1px solid white;
+}
+.key-text {
+  font-family: monospace;
+  font-size: 20px;
+  color: white;
+}
