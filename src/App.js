@@ -55,6 +55,7 @@ class App extends React.Component {
           document.getElementById('nine').click();
           break;
         case('Backspace'):
+        case('Escape'):
           document.getElementById('clear').click();
           break;
         case('/'):
@@ -152,8 +153,30 @@ class App extends React.Component {
   render() {
     return (
       <div id="app">
-        <Display input={this.state.input} output={this.state.output}/>
+        <Screen input={this.state.input} output={this.state.output}/>
         <Pad updateScreen={this.updateScreen.bind(this)} keys={['clear', 'divide', 'multiply', 'seven', 'eight', 'nine', 'subtract', 'four', 'five', 'six', 'add', 'one', 'two', 'three', 'equals', 'zero', 'decimal']}/>
+      </div>
+    );
+  }
+}
+
+class Screen extends React.Component {
+  render() {
+    return (
+      <div id="screen">
+        <Formula input={this.props.input}/>
+        <br/>
+        <Display output={this.props.output}/>
+      </div>
+    );
+  }
+}
+
+class Formula extends React.Component {
+  render() {
+    return (
+      <div id="formula">
+        {this.props.input == '0' ? '' : this.props.input}
       </div>
     );
   }
@@ -163,28 +186,6 @@ class Display extends React.Component {
   render() {
     return (
       <div id="display">
-        <Input input={this.props.input}/>
-        <br/>
-        <Output output={this.props.output}/>
-      </div>
-    );
-  }
-}
-
-class Input extends React.Component {
-  render() {
-    return (
-      <div id="input">
-        {this.props.input == '0' ? '' : this.props.input}
-      </div>
-    );
-  }
-}
-
-class Output extends React.Component {
-  render() {
-    return (
-      <div id="output">
         {this.props.output}
       </div>
     );

@@ -91,14 +91,14 @@
 .key:hover {
   outline: 1px solid white;
 }
-#display {
+#screen {
   cursor: default;
 }
-#input {
+#formula {
   color: orange;
   float: right;
   font-size: .8em;
 }
-#output {
+#display {
   float: right;
 }
